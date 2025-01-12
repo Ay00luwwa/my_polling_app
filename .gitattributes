@@ -1,0 +1,29 @@
+# Handle line endings automatically for text files
+* text=auto
+
+# Normalize line endings for shell scripts
+*.sh text eol=lf
+
+# Treat all markdown files as text for diff
+*.md text
+
+# Set binary files to avoid text diffing
+*.jpg binary
+*.png binary
+*.gif binary
+*.pdf binary
+
+# Python-specific attributes
+*.py text eol=lf
+
+# JavaScript and frontend assets
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+
+
+*.py[cod] binary
+db.sqlite3 binary
+
+* text=auto eol=lf
