@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-r213+$(j0c4jfg_9l28-pepew79w_&31kxo#zk7p2rea7)!$(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://surverpoll.pythonanywhere.com']
 
 
 # Application definition
@@ -46,6 +46,7 @@ ROOT_URLCONF = 'myproject.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    'https://my-polling-app-navy.vercel.app',
 ]
 
 CORS_ALLOWED_METHODS = [

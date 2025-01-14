@@ -31,7 +31,7 @@ const SurveyCreator = () => {
       setError("");
       try {
         const response = await axios.post(
-          "http://localhost:8000/api/questions/",
+          "https://surverpoll.pythonanywhere.com/api/questions/",
           {
             question_text: question,
             pub_date: new Date().toISOString(),
@@ -41,7 +41,7 @@ const SurveyCreator = () => {
 
         await Promise.all(
           options.map((opt) =>
-            axios.post("http://localhost:8000/api/choices/", {
+            axios.post("https://surverpoll.pythonanywhere.com/api/choices/", {
               choice_text: opt,
               question: questionId,
             })
