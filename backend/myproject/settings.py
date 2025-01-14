@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-r213+$(j0c4jfg_9l28-pepew79w_&31kxo#zk7p2rea7)!$(g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://surverpoll.pythonanywhere.com']
+ALLOWED_HOSTS = ['surverpoll.pythonanywhere.com']
 
 
 # Application definition
