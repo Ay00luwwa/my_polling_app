@@ -11,7 +11,9 @@ const QuestionList = () => {
   useEffect(() => {
     const fetchQuestions = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/questions/");
+        const response = await axios.get(
+          "https://surverpoll.pythonanywhere.com/api/questions/"
+        );
         setQuestions(response.data);
       } catch (err) {
         console.error("Error fetching questions:", err);

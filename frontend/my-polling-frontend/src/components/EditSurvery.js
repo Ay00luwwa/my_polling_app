@@ -13,11 +13,11 @@ const EditSurvey = ({ surveyId }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/api/questions/${surveyId}/`)
+      .get(`https://surverpoll.pythonanywhere.com/api/questions/${surveyId}/`)
       .then((response) => {
         setQuestion(response.data.question_text);
         return axios.get(
-          `http://localhost:8000/api/choices/?question=${surveyId}`
+          `https://surverpoll.pythonanywhere.com/api/choices/?question=${surveyId}`
         );
       })
       .then((response) => {
@@ -34,16 +34,22 @@ const EditSurvey = ({ surveyId }) => {
     setError("");
 
     try {
-      await axios.put(`http://localhost:8000/api/questions/${surveyId}/`, {
-        question_text: question,
-      });
+      await axios.put(
+        `https://surverpoll.pythonanywhere.com/api/questions/${surveyId}/`,
+        {
+          question_text: question,
+        }
+      );
 
       await Promise.all(
         options.map((choice, index) =>
-          axios.put(`http://localhost:8000/api/choices/${index}/`, {
-            choice_text: choice,
-            question: surveyId,
-          })
+          axios.put(
+            `https://surverpoll.pythonanywhere.com/api/choices/${index}/`,
+            {
+              choice_text: choice,
+              question: surveyId,
+            }
+          )
         )
       );
 
